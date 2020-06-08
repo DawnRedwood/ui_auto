@@ -1,0 +1,31 @@
+# This is a TOML config file.
+
+title = "uiauto"
+
+[project]
+# 项目配置
+# full_test 为 true 时, 测试 project
+# full_test 为 false 时, 测试 project 中 packages, modules 与 cases 的并集(三者不能重复)
+full_test = false # 是否完整测试, true: 完整测试, false: 部分测试
+root_url = "https://dawnredwood-learninglog.herokuapp.com/" # 根路径
+all_projects = ["Learning_Log"] # 所有项目, 具体项目结构信息见case目录下各项目文件夹
+project = "Learning_Log" # 待测项目
+packages = [] # 待测包"package_2_topics"
+modules = [] # 待测模块"package_1_user.module_1_register"
+cases = [
+    "package_1_user.module_2_login.Login.test_1_jump",
+    "package_1_user.module_4_logout_by_record.Module4LogoutByRecord.test_module4_logout_by_record"
+] # 待测用例, 此项慎用, 因为同一 module 内的不同 case 可能耦合
+
+[driver]
+# 浏览器配置
+headless = false # 是否开启 headless Chrome 模式, true: 开启, false: 不开启
+implicitly_wait = 3 # 隐式等待时间
+
+[test]
+# 测试配置
+time_format = "%Y%m%d_%H%M%S" # test_time的格式, 用于测试中新增编辑时生成不重复的值
+sleep_time = 0.1 # 页面跳转、iframe切换、window切换、获取元素时的等待时间, 两个用例之间的等待时间
+verbosity = 2 # 是否显示用例注释, > 1: 显示, <= 1: 不显示
+retry = 2 # 用例失败时重复执行的次数, = 0 为不重复执行
+save_last_try = true # 是否只显示重复多次执行中最后一次执行用例的记录, true: 只显示最后一次, false: 显示所有记录
