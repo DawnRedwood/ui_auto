@@ -1,4 +1,4 @@
-# UIAUTO
+# UI AUTO
 > **作者**：Dawn  
 > **语言**：Python  
 > **概述**：本项目主要用于==Web端UI自动化测试==，所用框架为`python`+`selenium`+`unittest`。编写用例提供了两种方式，一是通过PO模式编写用例，二是通过`katalon-recorder`录制用例。项目提供了参数化执行用例、生成测试报告、错误截图、用例可以选择全部执行或部分执行、常用参数可配置、简化selenium中的复杂方法等功能。  
